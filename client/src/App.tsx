@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 
+const backendUrl = process.env.BACKEND_URL || 'http://localhost:3000/api';
+
 function App() {
   const [array, setArray] = useState([]);
 
   const fetchAPI = async () => {
-    const response = await fetch('http://localhost:3000/api');
+    const response = await fetch(backendUrl);
     const { fruits } = await response.json();
     setArray(fruits);
   };
