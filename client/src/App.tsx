@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 
-const backendUrl = process.env.BACKEND_URL || 'http://localhost:3000/api';
-
-console.log(backendUrl);
+const backendUrl =
+  import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000/api';
 
 function App() {
   const [array, setArray] = useState([]);
