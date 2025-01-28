@@ -2,7 +2,12 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://application-sandbox-client.onrender.com',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+};
+
+app.use(cors(corsOptions));
 
 app.get('/api', (req, res) => {
   res.json({ fruits: ['apple', 'asdfasdfsad', 'banana'] });
