@@ -1,11 +1,11 @@
-FROM node:alpine
+FROM node:23-alpine
 
 WORKDIR /usr/src/app
 
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 
-COPY package.json ./
+COPY package*.json ./
 
 RUN if [ "$NODE_ENV" = "production" ]; then npm install --production; else npm install; fi
 
