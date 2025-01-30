@@ -20,7 +20,7 @@ function App() {
     <>
       {array.map((fruit, index) => (
         <div key={index}>
-          <p>{fruit} 12345</p>
+          <p>{fruit} 0000</p>
         </div>
       ))}
     </>
