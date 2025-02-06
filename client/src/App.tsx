@@ -3,6 +3,12 @@ import { useState, useEffect } from 'react';
 const backendUrl =
   import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000/api';
 
+function greet(name) {
+  return `Hello, ${name}`;
+}
+
+greet('danny');
+
 function App() {
   const [array, setArray] = useState([]);
 
@@ -20,7 +26,7 @@ function App() {
     <>
       {array.map((fruit, index) => (
         <div key={index}>
-          <p>{fruit} 11111</p>
+          <p>{fruit} 22222</p>
         </div>
       ))}
     </>
