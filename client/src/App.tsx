@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 const backendUrl =
   import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000/api';
 
-function greet(name: any) {
+function greet(name) {
   return `Hello, ${name}`;
 }
 
