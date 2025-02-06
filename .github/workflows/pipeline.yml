@@ -36,6 +36,7 @@ jobs:
       # - name: Run Eslint on Server
       #   run: |
       #     cd server && npm run lint
+      
       - name: Build client
         run: |
           cd client && npm run build
