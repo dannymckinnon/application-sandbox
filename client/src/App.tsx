@@ -1,25 +1,15 @@
 import { useState, useEffect } from 'react';
-
-const backendUrl =
-  import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000/api';
-
-function greet(name: string) {
-  return `Hello, ${name}`;
-}
-
-greet('danny');
+import service from './services/services';
 
 function App() {
   const [array, setArray] = useState([]);
 
-  const fetchAPI = async () => {
-    const response = await fetch(backendUrl);
-    const { fruits } = await response.json();
-    setArray(fruits);
-  };
-
   useEffect(() => {
-    fetchAPI();
+    const getData = async () => {
+      const fruits = await service.getFruits();
+      setArray(fruits);
+    };
+    getData();
   }, []);
 
   return (
