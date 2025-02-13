@@ -1,3 +1,25 @@
+# Development stage (using Docker Compose to override this)
+FROM node:23-alpine AS development
+
+# Set working directory
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json (or yarn.lock)
+COPY package*.json ./
+
+# Install all dependencies (both dev and prod) for development
+RUN npm install
+
+# Copy the rest of the source code
+COPY . .
+
+# Expose the port (adjust based on your app's port)
+EXPOSE 3000
+
+# Run the development server (adjust the command based on your setup)
+CMD ["npm", "run", "dev"]
+
+
 # Base image for building the app
 FROM node:23-alpine AS build
 
@@ -15,6 +37,7 @@ COPY . .
 
 # Build the app (adjust the command based on your setup)
 RUN npm run build
+
 
 # Production image
 FROM node:23-alpine AS production
@@ -44,23 +67,4 @@ EXPOSE 3000
 # Run the production server (adjust the command based on your setup)
 CMD ["npm", "run", "start"]
 
-# Development stage (using Docker Compose to override this)
-FROM node:23-alpine AS development
 
-# Set working directory
-WORKDIR /usr/src/app
-
-# Copy package.json and package-lock.json (or yarn.lock)
-COPY package*.json ./
-
-# Install all dependencies (both dev and prod) for development
-RUN npm install
-
-# Copy the rest of the source code
-COPY . .
-
-# Expose the port (adjust based on your app's port)
-EXPOSE 3000
-
-# Run the development server (adjust the command based on your setup)
-CMD ["npm", "run", "dev"]
