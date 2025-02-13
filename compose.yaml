@@ -11,6 +11,7 @@ services:
   server:
     build:
       context: ./server
+      target: development
       args:
         NODE_ENV: development
     environment:
