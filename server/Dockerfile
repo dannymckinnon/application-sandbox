@@ -59,7 +59,7 @@ RUN npm install --production
 USER node
 
 # Copy the dist folder from the build stage
-COPY --from=build /app/dist ./dist
+COPY --from=build /usr/src/app/dist ./dist
 
 # Expose the port (adjust based on your app's port)
 EXPOSE 3000
