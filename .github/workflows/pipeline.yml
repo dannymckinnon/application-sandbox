@@ -33,13 +33,17 @@ jobs:
         run: |
           cd client && npm run lint
 
-      # - name: Run Eslint on Server
-      #   run: |
-      #     cd server && npm run lint
+      - name: Run Eslint on Server
+        run: |
+          cd server && npm run lint
 
       - name: Build client
         run: |
           cd client && npm run build
+
+      - name: Build server
+        run: |
+          cd server && npm run build
 
       - name: Run tests on client
         run: |
