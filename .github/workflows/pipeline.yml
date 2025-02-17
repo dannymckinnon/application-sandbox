@@ -10,7 +10,7 @@ on:
       - main
 
 jobs:
-  simple_deployment_pipeline:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -21,30 +21,25 @@ jobs:
         with:
           node-version: '23'
 
-      - name: Install dependencies (Client)
+      - name: Install dependencies
         run: |
-          cd client && npm install
+          npm install --prefix client
+          npm install --prefix server
 
-      - name: Install dependencies (Server)
+      - name: Lint Code
         run: |
-          cd server && npm install
+          npm run lint --prefix client
+          npm run lint --prefix server
 
-      - name: Run Eslint on Client
+      - name: Build Applications
         run: |
-          cd client && npm run lint
-
-      - name: Run Eslint on Server
-        run: |
-          cd server && npm run lint
-
-      - name: Build client
-        run: |
-          cd client && npm run build
-
-      - name: Build server
-        run: |
-          cd server && npm run build
+          npm run build --prefix client
+          npm run build --prefix server
 
       - name: Run tests on client
         run: |
           cd client && npm run test
+
+      # - name: Run tests on server
+      #   run: |
+      #     cd server && npm run test
