@@ -40,5 +40,13 @@ export default [
       '@typescript-eslint/no-explicit-any': 'warn',
       'import/no-unresolved': 'error',
     },
+    settings: {
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+          project: './tsconfig.json',
+        },
+      },
+    },
   },
 ];

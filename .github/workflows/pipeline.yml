@@ -35,8 +35,4 @@ jobs:
 
       - name: Run tests on client
         run: |
-          cd client && npm run test
-
-      # - name: Run tests on server
-      #   run: |
-      #     cd server && npm run test
+          npm run test --prefix client && npm run test --prefix server
