@@ -53,7 +53,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install only production dependencies
-RUN npm install --production
+RUN npm install --omit=dev
 
 # Run the application as a non-root user.
 USER node
