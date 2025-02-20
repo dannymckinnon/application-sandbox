@@ -22,7 +22,7 @@
 }
 
 img {
-  width: 900px;
+  width: 901px;
   color: white;
   filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(200deg);
 }
