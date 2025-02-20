@@ -1,0 +1,27 @@
+{
+  "name": "application-sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:debug": "playwright test --debug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dannymckinnon/application-sandbox.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/dannymckinnon/application-sandbox/issues"
+  },
+  "homepage": "https://github.com/dannymckinnon/application-sandbox#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.50.1",
+    "playwright": "^1.50.1"
+  }
+}
