@@ -1,5 +1,5 @@
 import express from 'express';
-import { getFruits } from '../controllers/fruitController.ts';
+import { getFruits } from '../controllers/fruitController';
 
 const router = express.Router();
 

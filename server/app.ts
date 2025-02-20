@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-import { corsOptions } from './utils/config.ts';
-import fruitRouter from './routes/fruitRoutes.ts';
+import { corsOptions } from './utils/config';
+import fruitRouter from './routes/fruitRoutes';
 
 const app = express();
 
