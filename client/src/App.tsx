@@ -16,17 +16,27 @@ function App() {
 
   return (
     <>
-      <div className="flex">
-        <div className="toolbar">
+      <nav>
+        <a href="#one">One</a>
+        <a href="#two">Two</a>
+        <a href="#three">Three</a>
+      </nav>
+
+      <section id="one">
+        <div><img src={myImage2} alt="" /></div>
+      </section>
+
+      <section id="two">
+        <div><img src={myImage} alt="" /></div>
+      </section>
+
+      <section id="three">
+        <div>
           {array.map((fruit, index) => (
             <p key={index}>{fruit}</p>
           ))}
         </div>
-        <div>
-          <img src={myImage2} alt="" />
-          <img src={myImage} alt="" />
-        </div>
-      </div>
+      </section>
     </>
   );
 }
