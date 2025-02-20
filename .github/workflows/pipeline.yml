@@ -36,3 +36,10 @@ jobs:
       - name: Run tests on client
         run: |
           npm run test --prefix client && npm run test --prefix server
+
+      - name: Debug Build
+        if: failure()
+        run: |
+          echo "Client build failed. Debugging..."
+          ls -la client/src/assets/images
+          cat client/vite.config.ts
