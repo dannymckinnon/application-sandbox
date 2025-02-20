@@ -18,9 +18,9 @@ describe('App component', () => {
   it('renders fruits from the service', async () => {
     render(<App />);
 
-    const apple = await screen.findByText('Apple 22222');
-    const banana = await screen.findByText('Banana 22222');
-    const cherry = await screen.findByText('Cherry 22222');
+    const apple = await screen.findByText('Apple');
+    const banana = await screen.findByText('Banana');
+    const cherry = await screen.findByText('Cherry');
 
     expect(apple).toBeInTheDocument();
     expect(banana).toBeInTheDocument();
