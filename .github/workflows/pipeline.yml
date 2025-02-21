@@ -46,8 +46,7 @@ jobs:
       - name: Install Playwright
         run: |
           npm install
-          npx playwright install-deps
-          npx playwright install
+          npx playwright install --with-deps
 
       - name: Run Playwright tests
         run: npm run test:e2e
