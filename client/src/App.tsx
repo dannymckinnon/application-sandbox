@@ -23,11 +23,15 @@ function App() {
       </nav>
 
       <section id="one">
-        <div><img src={myImage2} alt="" /></div>
+        <div>
+          <img src={myImage2} alt="" />
+        </div>
       </section>
 
       <section id="two">
-        <div><img src={myImage} alt="" /></div>
+        <div>
+          <img src={myImage} alt="" />
+        </div>
       </section>
 
       <section id="three">
